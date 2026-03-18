@@ -15,8 +15,8 @@ Fill in the following information.
   - Student 2 – [Name]  
   - Student 3 – [Name]
 
-- **Course Name:** [Insert course name]
-- **Instructor:** [Insert instructor name]
+- **Course Name:** AI In Finance
+- **Instructor:** Nicolas De Roux & Mohamed EL FAKIR
 - **Submission Date:** [Insert date]
 
 ---

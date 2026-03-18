@@ -11,7 +11,7 @@
 - Please fill in the **group registration sheet** once your group is formed.
 
 **Group sheet:**  
-👉 INSERT LINK TO GROUP SHEET HERE
+👉 [Link](https://docs.google.com/spreadsheets/d/1uoYHlhzkCExErpqD9_0VxEwkgxrxW8O9Yvb-Xm7b0Js/edit?usp=sharing)
 
 ---
 
