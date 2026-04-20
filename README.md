@@ -8,7 +8,6 @@
 # 1. Project Information
 
 - **Project Title:** S&P 500 ESG Risk Rating Predictor
-- **Group Name:** [Insert group name]
 - **Group Members:**
   - Student 1 – Sarah JACQUEMIN
   - Student 2 – Yasmin OWEN
