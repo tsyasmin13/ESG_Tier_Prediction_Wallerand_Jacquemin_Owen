@@ -9,12 +9,13 @@
 
 - **Project Title:** S&P 500 ESG Risk Rating Predictor
 - **Group Name:** [Insert group name]
-- **Group Members:** - Student 1 – [Name]  
-  - Student 2 – [Name]  
-  - Student 3 – [Name]
+- **Group Members:**
+  - Student 1 – Sarah JACQUEMIN
+  - Student 2 – Yasmin OWEN
+  - Student 3 – Romane WALLERAND 
 - **Course Name:** AI In Finance
 - **Instructor:** Nicolas De Roux & Mohamed EL FAKIR
-- **Submission Date:** [Insert date]
+- **Submission Date:** 20/04/2026
 
 ---
 
