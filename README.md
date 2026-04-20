@@ -79,7 +79,8 @@ This project uses a primary dataset from Kaggle combined dynamically with live f
 
 The model is trying to predict the **ESG Risk Level** of a given company. Originally, the dataset contains 5 levels of risk. To create a stronger, single source of truth and reduce overlapping ambiguities, we simplified the target variable into 3 distinct classes:
 - **Low** (Merges "Negligible" and standard "Low")
-- **Medium** - **High** (Merges "Severe" and standard "High")
+- **Medium**
+- **High** (Merges "Severe" and standard "High")
 
 ---
 
@@ -95,7 +96,7 @@ The model is trying to predict the **ESG Risk Level** of a given company. Origin
 ## Data Distribution
 
 - The target variable was simplified to 3 classes to improve class balance. 
-- Words within the text descriptions vary significantly by risk level (explored via WordClouds), with high-risk companies frequently utilizing terminology related to traditional energy, extraction, and heavy industry. 
+- Words within the text descriptions vary significantly by risk level (explored with WordClouds), with high-risk companies frequently utilizing terminology related to traditional energy, extraction, and heavy industry. 
 - A stratified 80/20 train-test split was used to ensure the class distribution remained consistent across training and evaluation phases.
 
 ---
@@ -106,19 +107,19 @@ Several data quality issues were addressed during preprocessing:
 - **Missing Targets:** Rows without an ESG Risk Level were dropped.
 - **Formatting Issues:** The "Full Time Employees" column contained string formatting (commas) which required cleaning and conversion to floats.
 - **Missing Text:** Empty descriptions were filled with empty strings.
-- **Missing Financials:** The Yahoo Finance API occasionally fails to fetch data or returns nulls for certain metrics; these missing values were handled using imputation pipelines.
+- **Missing Financials:** The Yahoo Finance API sometimes fails to fetch data or returns nulls for certain metrics; these missing values were handled using imputation pipelines.
 
 ---
 
 # 6. Data Preprocessing
 
-1. **Target Mapping:** Grouped the 5-class ESG risk into 3 classes to improve model stability.
-2. **Feature Engineering (Regex):** Created `is_renewable` and `is_fossil` binary features by scanning the `Description` column for specific industry keywords. This acts as a strong prior for ESG risk.
-3. **Data Cleaning:** Stripped commas from the `Full Time Employees` column and cast it to numerical types.
-4. **Train/Test Split:** Performed a stratified split *before* any major transformations to prevent data leakage.
-5. **Categorical Encoding:** Applied `OneHotEncoder` with `handle_unknown="ignore"` to safely encode `Sector` and `Industry` without leaking test-set categories.
-6. **Numerical Scaling & Imputation:** Used a `SimpleImputer` (median strategy) to handle missing values (especially from yfinance) and `StandardScaler` to normalize numerical ranges.
-7. **Text Vectorization:** Fit a `TfidfVectorizer` (max 300 features, English stop words removed) solely on the training descriptions, yielding a sparse matrix of text features.
+1. **Target Mapping:** We grouped the 5-class ESG risk into 3 classes to improve model stability.
+2. **Feature Engineering (Regex):** We created `is_renewable` and `is_fossil` binary features by scanning the `Description` column for specific industry keywords. This acts as a strong prior for ESG risk.
+3. **Data Cleaning:** We stripped commas from the `Full Time Employees` column and cast it to numerical types.
+4. **Train/Test Split:** We performed a stratified split *before* any major transformations to prevent data leakage.
+5. **Categorical Encoding:** We applied `OneHotEncoder` with `handle_unknown="ignore"` to safely encode `Sector` and `Industry` without leaking test-set categories.
+6. **Numerical Scaling & Imputation:** We used a `SimpleImputer` (median strategy) to handle missing values (especially from yfinance) and `StandardScaler` to normalize numerical ranges.
+7. **Text Vectorization:** We fit a `TfidfVectorizer` (max 300 features, English stop words removed) solely on the training descriptions, yielding a sparse matrix of text features.
 
 ---
 
@@ -128,9 +129,6 @@ Several data quality issues were addressed during preprocessing:
 
 1. **Random Forest Classifier** (Used for Baseline, NLP, and Final Models)
 2. **BART-MNLI (Facebook)** (Used for Zero-Shot text classification)
-
-
-[Image explaining Zero-Shot Learning with NLP models]
 
 ---
 
@@ -174,7 +172,6 @@ Several data quality issues were addressed during preprocessing:
 
 # 9. Installation
 
-To install the necessary dependencies for this project, ensure you have Python installed and run the following command:
 
 ```bash
 pip install pandas numpy matplotlib scikit-learn transformers yfinance kagglehub joblib wordcloud scipy
